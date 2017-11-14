@@ -1,0 +1,12 @@
+.comment-container {
+
+    padding: 10px;
+}
+
+.comment-item {
+    display: inline-block;
+}
+
+.comment-action {
+    display: inline-block;
+}

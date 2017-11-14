@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments App</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="app.css">
+
+    <!-- Libs -->
+    <script src="../node_modules/angular/angular.min.js"></script>
+
+    <!-- source -->
+    <script src="app.js"></script>
+
+    <!-- Services-->
+    <script src="services/comment-service.js"></script>
+
+    <!-- Directives -->
+    <script src="directives/comment-directive.js"></script>
+
+
+</head>
+<body ng-app="comment-app">
+
+    <div ng-controller="commentCtrl">
+
+        <div ng-repeat="comment in commentList" class="comment-container">
+
+            <div class="comment-item">
+                <comment-item comment="comment"> </comment-item>
+            </div>
+
+            <div class="comment-action">
+                <button ng-click="editComment(comment)"> EDIT </button>
+                <button ng-click="deleteComment(comment)"> DELETE </button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
