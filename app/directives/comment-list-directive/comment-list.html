@@ -1,0 +1,11 @@
+<div ng-repeat="comment in commentList" class="comment-list">
+
+    <div class="comment-item">
+        <comment-item comment="comment"> </comment-item>
+    </div>
+
+    <div class="comment-action">
+        <button ng-click="editComment(comment)"> EDIT </button>
+        <button ng-click="deleteComment(comment)"> DELETE </button>
+    </div>
+</div>
