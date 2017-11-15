@@ -10,7 +10,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(bodyParser.json())
-
+app.use(express.static(__dirname + "/"));
 
 
 app.delete('/comments/:id', function(req, res) {

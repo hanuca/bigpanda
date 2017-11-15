@@ -7,7 +7,8 @@
 
         return {
             restrict: 'E',
-            template: '<div>  {{comment.email}} </div> <div> {{comment.comment}} </div> ',
+
+            templateUrl: 'directives/comment-directive/comment-item.html',
             scope: {
                 comment: '='
             }
