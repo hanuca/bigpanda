@@ -1,3 +1,10 @@
 .comment-email {
     font-weight: bold;
 }
+
+.comment-desc {
+    width: 550px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
