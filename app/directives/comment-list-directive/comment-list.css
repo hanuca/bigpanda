@@ -9,4 +9,19 @@
 
 .comment-action {
     display: inline-block;
+    margin-left: 20px;
+}
+
+.edit-comment-icon:hover {
+   color :blue;
+   cursor: pointer;
+}
+
+.delete-comment-icon {
+    margin-left: 5px;
+}
+
+.delete-comment-icon:hover {
+    color :blue;
+    cursor: pointer;
 }

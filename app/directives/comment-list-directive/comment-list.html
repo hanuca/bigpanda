@@ -5,7 +5,8 @@
     </div>
 
     <div class="comment-action">
-        <button ng-click="editComment(comment)"> EDIT </button>
-        <button ng-click="deleteComment(comment)"> DELETE </button>
+
+        <div ng-click="editComment(comment)" class="glyphicon glyphicon-pencil edit-comment-icon" title="Edit"></div>
+        <div ng-click="deleteComment(comment)" class="glyphicon glyphicon-trash delete-comment-icon" title="Delete"></div>
     </div>
 </div>
