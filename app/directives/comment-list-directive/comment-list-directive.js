@@ -16,14 +16,23 @@
                 $scope.deleteComment = function(comment) {
 
                     showDeleteCommentDialog(comment).then(function() {
-                      removeCommentFromList(comment);
-                      commentService.removeCommentFromDb(comment);
+
+                      commentService.removeCommentFromDb(comment).then(function() {
+                        removeCommentFromList(comment);
+                      }).catch(function() {
+                         alert('Comment delete failed');
+                      });
                     });
                 };
 
                 $scope.editComment = function(comment) {
                     showEditCommentDialog().then(function(result) {
-                        comment.comment = result;
+
+                        commentService.editCommentFromDb(comment, result).then(function() {
+                            comment.comment = result;
+                        }).catch(function() {
+                           alert('Comment edit failed');
+                        });
                    });
                 };
 

@@ -13,7 +13,12 @@
         };
 
         this.removeCommentFromDb = function(comment) {
-            $http.delete('/comments/' + comment.id);
+            return $http.delete('/comments/' + comment.id);
+        };
+
+        this.editCommentFromDb = function(comment, newText) {
+            var params = {comment: newText};
+            return $http.put('/comments/' + comment.id, params);
         };
 
     });
