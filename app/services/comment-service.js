@@ -11,5 +11,10 @@
                 return result.data;
             });
         };
+
+        this.removeCommentFromDb = function(comment) {
+            $http.delete('/comments/' + comment.id);
+        };
+
     });
 })();

@@ -12,11 +12,12 @@
             scope: {
                 commentList: '='
             },
-            controller: function($scope) {
+            controller: function($scope, commentService) {
                 $scope.deleteComment = function(comment) {
 
                     showDeleteCommentDialog(comment).then(function() {
                       removeCommentFromList(comment);
+                      commentService.removeCommentFromDb(comment);
                     });
                 };
 
