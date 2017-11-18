@@ -3,7 +3,7 @@
 
     var commentApp = angular.module('comment-app');
 
-    commentApp.directive('commentList', function() {
+    commentApp.directive('commentList', function($uibModal) {
 
         return {
             restrict: 'E',
@@ -15,13 +15,30 @@
             controller: function($scope) {
                 $scope.deleteComment = function(comment) {
 
-                    alert('delete');
+                    showDeleteCommentDialog(comment);
                 };
 
                 $scope.editComment = function(comment) {
 
                     alert('edit');
                 };
+
+                function showDeleteCommentDialog(comment) {
+
+                    var modalInstance = $uibModal.open({
+                      templateUrl: 'dialogs/delete-comment-dialog.html',
+                      controller: 'deleteCommentDialogCtrl'
+                    })
+
+                    modalInstance.result.then(function() {
+                      removeCommentFromList(comment);
+                    });
+                }
+
+                function removeCommentFromList(comment) {
+
+                   _.remove($scope.commentList, { 'id': comment.id});
+                }
             }
          };
     });

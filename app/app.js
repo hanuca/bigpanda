@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var commentApp = angular.module('comment-app', []);
+    var commentApp = angular.module('comment-app', ['ui.bootstrap']);
 
     commentApp.controller('commentCtrl', function($scope, commentService){
 
@@ -9,16 +9,5 @@
         commentService.getComments().then(function(commentsList) {
             $scope.commentList = commentsList;
         });
-
-        $scope.deleteComment = function(comment) {
-
-            alert('delete');
-        };
-
-        $scope.editComment = function(comment) {
-
-            alert('edit');
-        };
     });
-
 })();

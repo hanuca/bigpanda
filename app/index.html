@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <title>Comments App</title>
 
+    <!-- All app link and scripts should bundle and minify at production -->
+    <!-- I Left them like this to be readable for the exercise -->
+
+    <!-- Lib CSS -->
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
+
+
     <!-- Style -->
     <link rel="stylesheet" type="text/css" href="app.css">
     <link rel="stylesheet" type="text/css" href="directives/comment-directive/comment-item.css">
     <link rel="stylesheet" type="text/css" href="directives/comment-list-directive/comment-list.css">
 
     <!-- Libs -->
+    <script src="../node_modules/lodash/lodash.min.js"></script>
     <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
 
     <!-- source -->
     <script src="app.js"></script>
@@ -21,6 +31,10 @@
     <!-- Directives -->
     <script src="directives/comment-directive/comment-item-directive.js"></script>
     <script src="directives/comment-list-directive/comment-list-directive.js"></script>
+
+    <!-- Dialog -->
+    <script src="dialogs/delete-comment-dialog-controller.js"></script>
+
 
 </head>
 <body ng-app="comment-app" class="height--100">
