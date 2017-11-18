@@ -15,12 +15,15 @@
             controller: function($scope) {
                 $scope.deleteComment = function(comment) {
 
-                    showDeleteCommentDialog(comment);
+                    showDeleteCommentDialog(comment).then(function() {
+                      removeCommentFromList(comment);
+                    });
                 };
 
                 $scope.editComment = function(comment) {
-
-                    alert('edit');
+                    showEditCommentDialog().then(function(result) {
+                        comment.comment = result;
+                   });
                 };
 
                 function showDeleteCommentDialog(comment) {
@@ -30,14 +33,22 @@
                       controller: 'deleteCommentDialogCtrl'
                     })
 
-                    modalInstance.result.then(function() {
-                      removeCommentFromList(comment);
-                    });
+                    return modalInstance.result;
                 }
 
                 function removeCommentFromList(comment) {
 
                    _.remove($scope.commentList, { 'id': comment.id});
+                }
+
+                function showEditCommentDialog(comment) {
+
+                   var modalInstance = $uibModal.open({
+                     templateUrl: 'dialogs/edit-comment-dialog.html',
+                     controller: 'editCommentDialogCtrl'
+                   })
+
+                   return modalInstance.result;
                 }
             }
          };
